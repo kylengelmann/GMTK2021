@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/PersistentLevel.unity
+    guid: 3803596e3642473479c007ef3c8fc82e
+  - enabled: 1
+    path: Assets/Scenes/MainMenu/MainMenu.unity
+    guid: 02433b7afa539d54283a35e25b0f0412
+  - enabled: 1
+    path: Assets/Scenes/TestMap/TestMap.unity
+    guid: 498d8d4154aac99458f22ba0bc55cb6c
+  - enabled: 1
+    path: Assets/Scenes/TestMap/TestMapEnv.unity
+    guid: 6298868ec34e9b041801ef52ca515823
+  - enabled: 1
+    path: Assets/Scenes/TestMap/TestMapGP.unity
+    guid: 6e6082684397902499ef292c83dac529
   m_configObjects: {}
