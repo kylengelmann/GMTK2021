@@ -79,8 +79,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveParams:
     Speed: 8
-    WalkingAcceleration: 10
-    BrakingAcceleration: 15
+    WalkingAcceleration: 20
+    BrakingAcceleration: 30
     AirControl: 0
 --- !u!33 &-4540892236150183896
 MeshFilter:
