@@ -17,11 +17,17 @@ public class FloatyPlayerCharacter : PlayerCharacter
     public bool bIsThrusting { get; private set; }
     public Vector3 ThrustLocation { get; private set; }
 
+    Joint tetherAttachJoint;
+
     protected override void Start()
     {
         base.Start();
 
         floatyRigidbody = GetComponent<Rigidbody>();
+
+        tetherAttachJoint = GetComponent<Joint>();
+        tetherAttachJoint.connectedBody = GameManager.ship.tether.TetherEnd.GetComponent<Rigidbody>();
+        transform.position = GameManager.ship.tether.TetherEnd.transform.position + GameManager.ship.tether.TetherEnd.transform.TransformDirection(tetherAttachJoint.connectedAnchor);
     }
 
     protected override void UpdateMovement(float deltaTime)

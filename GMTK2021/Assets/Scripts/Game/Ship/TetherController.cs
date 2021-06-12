@@ -51,7 +51,6 @@ public class TetherController : ShipController
         TetherPos = TetherTrack.StandardizePathDistance(TetherPos);
 
         Tether.transform.position = TetherTrack.EvaluatePositionAtUnit(TetherPos, Cinemachine.CinemachinePathBase.PositionUnits.Distance);
-        Tether.transform.rotation = TetherTrack.EvaluateOrientationAtUnit(TetherPos, Cinemachine.CinemachinePathBase.PositionUnits.Distance);
     }
 
 }

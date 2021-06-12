@@ -6,4 +6,6 @@ public class Ship : MonoBehaviour
 {
     public Transform InsidePlayerSpawn;
     public Transform OutsidePlayerSpawn;
+
+    public Tether tether;
 }

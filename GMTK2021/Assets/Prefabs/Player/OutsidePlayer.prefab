@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 6557655817067709072}
   - component: {fileID: 4247423339049274921}
   - component: {fileID: 2210375610135671543}
-  m_Layer: 0
+  - component: {fileID: 871599202390373865}
+  m_Layer: 7
   m_Name: OutsidePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,6 +64,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6679b89ee33b444f94d24a39b58e334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentStation: {fileID: 0}
+  usingStation: 0
   playerController: {fileID: 0}
   acceleration: 5
   thrustDrag: 1
@@ -133,3 +136,39 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!59 &871599202390373865
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684918880879467501}
+  m_ConnectedBody: {fileID: 0}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
+  m_AutoConfigureConnectedAnchor: 0
+  m_ConnectedAnchor: {x: 0, y: 1, z: 0}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 0
+  m_Limits:
+    min: 0
+    max: 0
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
