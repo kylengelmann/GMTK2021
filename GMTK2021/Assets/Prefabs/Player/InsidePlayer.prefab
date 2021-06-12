@@ -114,9 +114,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16cb44eaec921a7408297a516f9ed024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentStation: {fileID: 0}
+  usingStation: 0
   playerController: {fileID: 0}
   moveParams:
     Speed: 8
-    WalkingAcceleration: 10
-    BrakingAcceleration: 25
+    WalkingAcceleration: 30
+    BrakingAcceleration: 50
     AirControl: 0

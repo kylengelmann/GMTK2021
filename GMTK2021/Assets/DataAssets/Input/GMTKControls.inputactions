@@ -129,6 +129,14 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "InsideInteract",
+                    "type": "Button",
+                    "id": "237d051a-725f-47c3-a0a9-ba178380b4b1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -186,6 +194,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "3857f1ee-207a-4feb-8d88-b55f245b8287",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "InsideInteract",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

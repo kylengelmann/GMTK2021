@@ -23,6 +23,5 @@ public class MainMenu : MonoBehaviour, GMTKControls.IMenuActions
 
             controls.Menu.Disable();
         }
-
     }
 }

@@ -57,6 +57,12 @@ public class PlayerController : MonoBehaviour, GMTKControls.IInsideGameplayActio
         InsidePlayerCharacter.SetMoveInput(Vector3.right * moveInput.x + Vector3.up * moveInput.y);
     }
 
+    public void OnInsideInteract(InputAction.CallbackContext context)
+    {
+        bool interact = context.started;
+        InsidePlayerCharacter.OnInteract();
+    }
+
     public void OnClick(InputAction.CallbackContext context)
     {
         if(context.ReadValueAsButton())

@@ -6,6 +6,9 @@ public class PlayerCharacter : Character
 { 
     protected Vector3 moveInput { get; private set; }
 
+    public ShipController currentStation;
+    public bool usingStation;
+
     protected Vector3 velocity;
 
     public PlayerController playerController;
@@ -17,7 +20,10 @@ public class PlayerCharacter : Character
 
     private void Update()
     {
-        UpdateMovement(Time.deltaTime);
+        if (!usingStation)
+        {
+            UpdateMovement(Time.deltaTime);
+        }
     }
 
     protected virtual void UpdateMovement(float deltaTime) { }
@@ -25,5 +31,14 @@ public class PlayerCharacter : Character
     public void SetMoveInput(in Vector3 inMoveInput)
     {
         moveInput = inMoveInput;
+    }
+
+    public void OnInteract()
+    {
+        usingStation = !usingStation && currentStation;
+        if (currentStation)
+        {
+            currentStation.setPlayerUsing(usingStation);
+        }
     }
 }

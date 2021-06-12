@@ -142,6 +142,14 @@ public class @GMTKControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""InsideInteract"",
+                    ""type"": ""Button"",
+                    ""id"": ""237d051a-725f-47c3-a0a9-ba178380b4b1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -199,6 +207,17 @@ public class @GMTKControls : IInputActionCollection, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3857f1ee-207a-4feb-8d88-b55f245b8287"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InsideInteract"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -242,6 +261,7 @@ public class @GMTKControls : IInputActionCollection, IDisposable
         // InsideGameplay
         m_InsideGameplay = asset.FindActionMap("InsideGameplay", throwIfNotFound: true);
         m_InsideGameplay_Move = m_InsideGameplay.FindAction("Move", throwIfNotFound: true);
+        m_InsideGameplay_InsideInteract = m_InsideGameplay.FindAction("InsideInteract", throwIfNotFound: true);
         // OutsideGameplay
         m_OutsideGameplay = asset.FindActionMap("OutsideGameplay", throwIfNotFound: true);
         m_OutsideGameplay_Click = m_OutsideGameplay.FindAction("Click", throwIfNotFound: true);
@@ -369,11 +389,13 @@ public class @GMTKControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_InsideGameplay;
     private IInsideGameplayActions m_InsideGameplayActionsCallbackInterface;
     private readonly InputAction m_InsideGameplay_Move;
+    private readonly InputAction m_InsideGameplay_InsideInteract;
     public struct InsideGameplayActions
     {
         private @GMTKControls m_Wrapper;
         public InsideGameplayActions(@GMTKControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_InsideGameplay_Move;
+        public InputAction @InsideInteract => m_Wrapper.m_InsideGameplay_InsideInteract;
         public InputActionMap Get() { return m_Wrapper.m_InsideGameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -386,6 +408,9 @@ public class @GMTKControls : IInputActionCollection, IDisposable
                 @Move.started -= m_Wrapper.m_InsideGameplayActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_InsideGameplayActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_InsideGameplayActionsCallbackInterface.OnMove;
+                @InsideInteract.started -= m_Wrapper.m_InsideGameplayActionsCallbackInterface.OnInsideInteract;
+                @InsideInteract.performed -= m_Wrapper.m_InsideGameplayActionsCallbackInterface.OnInsideInteract;
+                @InsideInteract.canceled -= m_Wrapper.m_InsideGameplayActionsCallbackInterface.OnInsideInteract;
             }
             m_Wrapper.m_InsideGameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -393,6 +418,9 @@ public class @GMTKControls : IInputActionCollection, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @InsideInteract.started += instance.OnInsideInteract;
+                @InsideInteract.performed += instance.OnInsideInteract;
+                @InsideInteract.canceled += instance.OnInsideInteract;
             }
         }
     }
@@ -442,6 +470,7 @@ public class @GMTKControls : IInputActionCollection, IDisposable
     public interface IInsideGameplayActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnInsideInteract(InputAction.CallbackContext context);
     }
     public interface IOutsideGameplayActions
     {
