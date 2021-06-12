@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/DataAssets/GMTKControls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/DataAssets/Input/GMTKControls.inputactions'
 
 using System;
 using System.Collections;
@@ -130,6 +130,104 @@ public class @GMTKControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""InsideGameplay"",
+            ""id"": ""c022e761-a810-479d-8328-c13d8c62fa9b"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""460fa833-cfe4-49c9-a812-3f0328debb46"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""17ac8f84-1237-4eb0-b935-88945200e195"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""1af88507-4bd2-46e6-93b2-c7e9ad19f792"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""9349a848-7027-471c-924f-9040d3877ae0"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""656e4f13-52f1-4a89-bc14-b924147441d7"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""beabcbdf-6049-4ceb-a355-98354ba90c1e"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
+        },
+        {
+            ""name"": ""OutsideGameplay"",
+            ""id"": ""ea81b52c-4c95-4547-adbe-8fc64b60cfc9"",
+            ""actions"": [
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""Value"",
+                    ""id"": ""01f61bf6-2187-4ad2-808e-eba20f5959fd"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e43d21cd-ee8e-455d-baf1-360b488b2748"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -141,6 +239,12 @@ public class @GMTKControls : IInputActionCollection, IDisposable
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
         m_Gameplay_Click = m_Gameplay.FindAction("Click", throwIfNotFound: true);
+        // InsideGameplay
+        m_InsideGameplay = asset.FindActionMap("InsideGameplay", throwIfNotFound: true);
+        m_InsideGameplay_Move = m_InsideGameplay.FindAction("Move", throwIfNotFound: true);
+        // OutsideGameplay
+        m_OutsideGameplay = asset.FindActionMap("OutsideGameplay", throwIfNotFound: true);
+        m_OutsideGameplay_Click = m_OutsideGameplay.FindAction("Click", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -260,6 +364,72 @@ public class @GMTKControls : IInputActionCollection, IDisposable
         }
     }
     public GameplayActions @Gameplay => new GameplayActions(this);
+
+    // InsideGameplay
+    private readonly InputActionMap m_InsideGameplay;
+    private IInsideGameplayActions m_InsideGameplayActionsCallbackInterface;
+    private readonly InputAction m_InsideGameplay_Move;
+    public struct InsideGameplayActions
+    {
+        private @GMTKControls m_Wrapper;
+        public InsideGameplayActions(@GMTKControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_InsideGameplay_Move;
+        public InputActionMap Get() { return m_Wrapper.m_InsideGameplay; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InsideGameplayActions set) { return set.Get(); }
+        public void SetCallbacks(IInsideGameplayActions instance)
+        {
+            if (m_Wrapper.m_InsideGameplayActionsCallbackInterface != null)
+            {
+                @Move.started -= m_Wrapper.m_InsideGameplayActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_InsideGameplayActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_InsideGameplayActionsCallbackInterface.OnMove;
+            }
+            m_Wrapper.m_InsideGameplayActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+            }
+        }
+    }
+    public InsideGameplayActions @InsideGameplay => new InsideGameplayActions(this);
+
+    // OutsideGameplay
+    private readonly InputActionMap m_OutsideGameplay;
+    private IOutsideGameplayActions m_OutsideGameplayActionsCallbackInterface;
+    private readonly InputAction m_OutsideGameplay_Click;
+    public struct OutsideGameplayActions
+    {
+        private @GMTKControls m_Wrapper;
+        public OutsideGameplayActions(@GMTKControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Click => m_Wrapper.m_OutsideGameplay_Click;
+        public InputActionMap Get() { return m_Wrapper.m_OutsideGameplay; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(OutsideGameplayActions set) { return set.Get(); }
+        public void SetCallbacks(IOutsideGameplayActions instance)
+        {
+            if (m_Wrapper.m_OutsideGameplayActionsCallbackInterface != null)
+            {
+                @Click.started -= m_Wrapper.m_OutsideGameplayActionsCallbackInterface.OnClick;
+                @Click.performed -= m_Wrapper.m_OutsideGameplayActionsCallbackInterface.OnClick;
+                @Click.canceled -= m_Wrapper.m_OutsideGameplayActionsCallbackInterface.OnClick;
+            }
+            m_Wrapper.m_OutsideGameplayActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Click.started += instance.OnClick;
+                @Click.performed += instance.OnClick;
+                @Click.canceled += instance.OnClick;
+            }
+        }
+    }
+    public OutsideGameplayActions @OutsideGameplay => new OutsideGameplayActions(this);
     public interface IMenuActions
     {
         void OnStart(InputAction.CallbackContext context);
@@ -267,6 +437,14 @@ public class @GMTKControls : IInputActionCollection, IDisposable
     public interface IGameplayActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
+    }
+    public interface IInsideGameplayActions
+    {
+        void OnMove(InputAction.CallbackContext context);
+    }
+    public interface IOutsideGameplayActions
+    {
         void OnClick(InputAction.CallbackContext context);
     }
 }

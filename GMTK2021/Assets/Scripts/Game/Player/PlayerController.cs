@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour, GMTKControls.IGameplayActions
+public class PlayerController : MonoBehaviour, GMTKControls.IInsideGameplayActions, GMTKControls.IOutsideGameplayActions
 {
     GMTKControls controls;
 
@@ -37,7 +37,8 @@ public class PlayerController : MonoBehaviour, GMTKControls.IGameplayActions
     private void Awake()
     {
         controls = new GMTKControls();
-        controls.Gameplay.SetCallbacks(this);
+        controls.InsideGameplay.SetCallbacks(this);
+        controls.OutsideGameplay.SetCallbacks(this);
 
         GameManager.currentLevel.OnLevelStart += OnLevelStart;
         GameManager.currentLevel.OnLevelEnd += OnLevelEnd;
@@ -70,12 +71,14 @@ public class PlayerController : MonoBehaviour, GMTKControls.IGameplayActions
 
     void OnLevelStart()
     {
-        controls.Gameplay.Enable();
+        controls.InsideGameplay.Enable();
+        controls.OutsideGameplay.Enable();
     }
 
     void OnLevelEnd()
     {
-        controls.Gameplay.Disable();
+        controls.OutsideGameplay.Disable();
+        controls.InsideGameplay.Enable();
     }
 
     public Vector3 GetMouseLocation()
