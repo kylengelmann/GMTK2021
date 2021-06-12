@@ -154,6 +154,7 @@ public class GameManager : Singleton<GameManager>
                         GameObject insideCharacterGO = Instantiate(gameData.InsidePlayerPrefab, ship.InsidePlayerSpawn.position, ship.InsidePlayerSpawn.rotation);
                         if(insideCharacterGO)
                         {
+                            insideCharacterGO.transform.parent = ShipGO.transform;
                             insideCharacter = insideCharacterGO.GetComponent<WalkyPlayerCharacter>();
                             if(!insideCharacter)
                             {

@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class TetherController : ShipController
+public class PilotController : ShipController
 {
-    public GameObject Tether;
-    public Vector2 tetherMove;
-    
+    public Vector2 pilotMove;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<WalkyPlayerCharacter>())
         {
-        other.gameObject.GetComponent<WalkyPlayerCharacter>().currentStation = this;
+            other.gameObject.GetComponent<WalkyPlayerCharacter>().currentStation = this;
         }
     }
 
@@ -24,20 +23,18 @@ public class TetherController : ShipController
         }
     }
 
-    public Cinemachine.CinemachineSmoothPath TetherTrack;
-
     public float TetherSpeed = 0f;
 
     float TetherPos = 0f;
 
     private void Update()
     {
-        MoveTether(Time.deltaTime * TetherSpeed * tetherMove.x);
+        MoveTether(Time.deltaTime * TetherSpeed * pilotMove.x);
     }
 
     public override void OnMove(InputAction.CallbackContext context)
     {
-        tetherMove = context.ReadValue<Vector2>();
+        pilotMove = context.ReadValue<Vector2>();
     }
 
     public override void OnInsideInteract(InputAction.CallbackContext context)
@@ -47,11 +44,6 @@ public class TetherController : ShipController
     void MoveTether(float deltaPos)
     {
         TetherPos += deltaPos;
-
-        TetherPos = TetherTrack.StandardizePathDistance(TetherPos);
-
-        Tether.transform.position = TetherTrack.EvaluatePositionAtUnit(TetherPos, Cinemachine.CinemachinePathBase.PositionUnits.Distance);
-        Tether.transform.rotation = TetherTrack.EvaluateOrientationAtUnit(TetherPos, Cinemachine.CinemachinePathBase.PositionUnits.Distance);
     }
 
 }

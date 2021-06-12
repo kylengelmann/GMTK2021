@@ -117,6 +117,12 @@ public class WalkyPlayerCharacter : PlayerCharacter
         bIsGrounded = false;
         groundNormal = Vector3.up;
 
+        if(usingStation)
+        {
+            deltaPos = Vector2.zero;
+            velocity = Vector2.zero;
+        }
+
         characterController.Move(deltaPos);
     }
 
