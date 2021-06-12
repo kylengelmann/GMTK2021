@@ -43,7 +43,7 @@ Material:
     m_Floats:
     - Bob_Amount: 0.2
     - Bob_Speed: 4
-    - Gauge_Progress: 0.47
+    - Gauge_Progress: 0.5
     - Step_Edge: 1
     - Wave_Speed: 0.2
     m_Colors:
