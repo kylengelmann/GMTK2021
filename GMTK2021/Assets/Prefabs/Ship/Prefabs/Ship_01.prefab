@@ -1259,6 +1259,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8206261044769750204}
     m_Modifications:
+    - target: {fileID: 734647237371681712, guid: 86fb613ae9246e44fabd4f9cdc479296, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5706659855316067213, guid: 86fb613ae9246e44fabd4f9cdc479296, type: 3}
       propertyPath: m_Name
       value: Turret
@@ -1430,6 +1434,10 @@ PrefabInstance:
     - target: {fileID: 5660731487704758642, guid: 335bb5d67b5ad7c42b323ae5305b0cf5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6523876882452838679, guid: 335bb5d67b5ad7c42b323ae5305b0cf5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 335bb5d67b5ad7c42b323ae5305b0cf5, type: 3}
