@@ -126,6 +126,11 @@ public class WalkyPlayerCharacter : PlayerCharacter
         characterController.Move(deltaPos);
     }
 
+    protected override void Collidable(bool collidable)
+    {
+        Physics.IgnoreLayerCollision(6, 9, !collidable);
+    }
+
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         velocity = Vector3.ProjectOnPlane(velocity, hit.normal);

@@ -23,10 +23,16 @@ public class PlayerCharacter : Character
         if (!usingStation)
         {
             UpdateMovement(Time.deltaTime);
+            Collidable(true);
+        }
+        if (usingStation)
+        {
+            Collidable(false);
         }
     }
 
     protected virtual void UpdateMovement(float deltaTime) { }
+    protected virtual void Collidable(bool collidable) { }
 
     public void SetMoveInput(in Vector3 inMoveInput)
     {

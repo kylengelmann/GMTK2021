@@ -6,6 +6,16 @@ using UnityEngine.InputSystem;
 public class PilotController : ShipController
 {
     public Vector2 pilotMove;
+    public Rigidbody shipBody;
+    public Vector2 force;
+    public Vector2 forceDirection;
+
+    public float SpeedInThrustDir;
+    public float acceleration = 10f;
+    public float maxSpeed = 10f;
+    public float maxThrustSpeed = 10f;
+    public float ThrustForceFalloffStartSpeed = 5f;
+
 
     void OnTriggerEnter(Collider other)
     {
@@ -23,15 +33,6 @@ public class PilotController : ShipController
         }
     }
 
-    public float TetherSpeed = 0f;
-
-    float TetherPos = 0f;
-
-    private void Update()
-    {
-        MoveTether(Time.deltaTime * TetherSpeed * pilotMove.x);
-    }
-
     public override void OnMove(InputAction.CallbackContext context)
     {
         pilotMove = context.ReadValue<Vector2>();
@@ -41,9 +42,23 @@ public class PilotController : ShipController
     {
         bool interact = context.performed;
     }
-    void MoveTether(float deltaPos)
+
+    private void Update()
     {
-        TetherPos += deltaPos;
+        UpdateMovement(Time.deltaTime);
     }
 
+    private void UpdateMovement(float deltaTime)
+    {
+
+        forceDirection = pilotMove;
+
+        float SpeedInThrustDir = Vector3.Dot(shipBody.velocity, forceDirection);
+
+        float forceSpeedFalloff = Mathf.Clamp01((SpeedInThrustDir - ThrustForceFalloffStartSpeed) / (maxThrustSpeed - ThrustForceFalloffStartSpeed));
+       
+        Vector3 force = forceDirection * Mathf.Lerp(acceleration, 0, forceSpeedFalloff);
+
+        shipBody.AddForce(force, ForceMode.Acceleration);
+    }
 }
