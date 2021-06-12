@@ -12,12 +12,18 @@ public class GameManager : Singleton<GameManager>
     [System.Serializable]
     public struct GameData
     {
-        public GameObject PlayerPrefab;
+        public GameObject shipPrefab;
+
+        public GameObject InsidePlayerPrefab;
+
+        public GameObject OutsidePlayerPrefab;
     }
 
     [SerializeField] private GameData _gameData;
 
     public static PlayerController playerController { get; private set; }
+
+    public static Ship ship { get; private set; }
 
     public static LevelScript currentLevel { get; private set; }
 
@@ -129,27 +135,78 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    public static void SpawnPlayer(Vector3 location, Quaternion rotation)
+    public static void SpawnPlayer(GameObject playerStart)
     {
-        if (gameData.PlayerPrefab)
+        if (gameData.shipPrefab)
         {
-            GameObject Player = Instantiate(gameData.PlayerPrefab, location, rotation);
-
-            if(!Player)
+            GameObject ShipGO = Instantiate(gameData.shipPrefab, playerStart.transform.position, playerStart.transform.rotation);
+            if (ShipGO)
             {
-                Debug.LogError("Failed to spawn player");
+                ship = ShipGO.GetComponent<Ship>();
+                if(ship)
+                {
+                    GameObject playerControllerGO = new GameObject("Player Controller");
+                    playerController = playerControllerGO.AddComponent<PlayerController>();
+
+                    WalkyPlayerCharacter insideCharacter = null;
+                    if (gameData.InsidePlayerPrefab)
+                    {
+                        GameObject insideCharacterGO = Instantiate(gameData.InsidePlayerPrefab, ship.InsidePlayerSpawn.position, ship.InsidePlayerSpawn.rotation);
+                        if(insideCharacterGO)
+                        {
+                            insideCharacter = insideCharacterGO.GetComponent<WalkyPlayerCharacter>();
+                            if(!insideCharacter)
+                            {
+                                Debug.LogError("Inside character has no walky player character component");
+                            }
+                        }
+                        else
+                        {
+                            Debug.LogError("Failed to spawn inside character");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogError("Null inside player prefab");
+                    }
+
+                    FloatyPlayerCharacter outsideCharacter = null;
+                    if (gameData.InsidePlayerPrefab)
+                    {
+                        GameObject outsideCharacterGO = Instantiate(gameData.OutsidePlayerPrefab, ship.OutsidePlayerSpawn.position, ship.OutsidePlayerSpawn.rotation);
+                        if (outsideCharacterGO)
+                        {
+                            outsideCharacter = outsideCharacterGO.GetComponent<FloatyPlayerCharacter>();
+                            if (!outsideCharacter)
+                            {
+                                Debug.LogError("Outside character has no walky player character component");
+                            }
+                        }
+                        else
+                        {
+                            Debug.LogError("Failed to spawn outside character");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogError("Null outside player prefab");
+                    }
+
+                    playerController.InitializeCharacters(insideCharacter, outsideCharacter);
+                }
+                else
+                {
+                    Debug.LogError("Ship has no Ship component");
+                }
             }
-
-            playerController = Player.GetComponent<PlayerController>();
-
-            if(!playerController)
+            else
             {
-                Debug.LogError("No player component on spawned player");
+                Debug.LogError("Failed to spawn ship");
             }
         }
         else
         {
-            Debug.LogError("Missing player prefab");
+            Debug.LogError("Null ship prefab");
         }
     }
 }

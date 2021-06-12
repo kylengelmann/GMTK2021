@@ -35,21 +35,15 @@ public class LevelScript : MonoBehaviour
     private void StartLevelInternal()
     {
         // Spawn the player
-        Vector3 PlayerPos = Vector3.zero;
-        Quaternion PlayerRot = Quaternion.identity;
-
         GameObject PlayerSpawn = GameObject.FindWithTag(PlayerStartTag);
         if (PlayerSpawn)
         {
-            PlayerPos = PlayerSpawn.transform.position;
-            PlayerRot = PlayerSpawn.transform.rotation;
+            GameManager.SpawnPlayer(PlayerSpawn);
         }
         else
         {
             Debug.LogWarning("Failed to find player start");
         }
-
-        GameManager.SpawnPlayer(PlayerPos, PlayerRot);
     }
 
     public System.Action OnLevelStart;

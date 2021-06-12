@@ -41,10 +41,10 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Look",
-                    "type": "Value",
+                    "name": "Click",
+                    "type": "Button",
                     "id": "96321006-5e76-45ad-863c-afafac545fd6",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -108,11 +108,11 @@
                 {
                     "name": "",
                     "id": "50ff9c31-ad0e-4c72-b721-42eb02081416",
-                    "path": "<Mouse>/delta",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Look",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

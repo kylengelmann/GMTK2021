@@ -54,10 +54,10 @@ public class @GMTKControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Look"",
-                    ""type"": ""Value"",
+                    ""name"": ""Click"",
+                    ""type"": ""Button"",
                     ""id"": ""96321006-5e76-45ad-863c-afafac545fd6"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -121,11 +121,11 @@ public class @GMTKControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""50ff9c31-ad0e-4c72-b721-42eb02081416"",
-                    ""path"": ""<Mouse>/delta"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Look"",
+                    ""action"": ""Click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -140,7 +140,7 @@ public class @GMTKControls : IInputActionCollection, IDisposable
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
-        m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
+        m_Gameplay_Click = m_Gameplay.FindAction("Click", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -224,13 +224,13 @@ public class @GMTKControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Gameplay;
     private IGameplayActions m_GameplayActionsCallbackInterface;
     private readonly InputAction m_Gameplay_Move;
-    private readonly InputAction m_Gameplay_Look;
+    private readonly InputAction m_Gameplay_Click;
     public struct GameplayActions
     {
         private @GMTKControls m_Wrapper;
         public GameplayActions(@GMTKControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
-        public InputAction @Look => m_Wrapper.m_Gameplay_Look;
+        public InputAction @Click => m_Wrapper.m_Gameplay_Click;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -243,9 +243,9 @@ public class @GMTKControls : IInputActionCollection, IDisposable
                 @Move.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
-                @Look.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLook;
-                @Look.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLook;
-                @Look.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLook;
+                @Click.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnClick;
+                @Click.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnClick;
+                @Click.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnClick;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -253,9 +253,9 @@ public class @GMTKControls : IInputActionCollection, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
-                @Look.started += instance.OnLook;
-                @Look.performed += instance.OnLook;
-                @Look.canceled += instance.OnLook;
+                @Click.started += instance.OnClick;
+                @Click.performed += instance.OnClick;
+                @Click.canceled += instance.OnClick;
             }
         }
     }
@@ -267,6 +267,6 @@ public class @GMTKControls : IInputActionCollection, IDisposable
     public interface IGameplayActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnLook(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
     }
 }
