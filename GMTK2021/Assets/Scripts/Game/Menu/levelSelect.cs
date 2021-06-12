@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MainMenu : MonoBehaviour, GMTKControls.IMenuActions
+public class levelSelect : MonoBehaviour, GMTKControls.IMenuActions
 {
     GMTKControls controls;
+    public int thisLevel;
     void Start()
     {
         controls = new GMTKControls();
@@ -17,9 +18,9 @@ public class MainMenu : MonoBehaviour, GMTKControls.IMenuActions
     public void OnStart(InputAction.CallbackContext context)
     {
         bool bPressed = context.ReadValue<float>() > .5f;
-        if(bPressed)
+        if (bPressed)
         {
-            GameManager.LoadLevel(1);
+            GameManager.LoadLevel(thisLevel);
 
             controls.Menu.Disable();
         }
