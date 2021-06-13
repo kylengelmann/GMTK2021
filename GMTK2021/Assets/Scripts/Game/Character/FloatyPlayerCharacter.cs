@@ -6,7 +6,6 @@ using UnityEngine;
 public class FloatyPlayerCharacter : PlayerCharacter
 {
     public float acceleration = 10f;
-    public float thrustDrag = 1f;
 
     public float maxThrustSpeed = 10f;
     public float ThrustForceFalloffStartSpeed = 5f;
@@ -43,8 +42,6 @@ public class FloatyPlayerCharacter : PlayerCharacter
 
         float forceSpeedFalloff = Mathf.Clamp01((SpeedInThrustDir - ThrustForceFalloffStartSpeed) / (maxThrustSpeed - ThrustForceFalloffStartSpeed));
         float forceDistanceFalloff = Mathf.Clamp01(ThrustForceFalloffStartDistance - distanceFromCursor);
-
-        Debug.Log(forceDistanceFalloff);
 
         Vector3 force = forceDirection * Mathf.Lerp(acceleration, 0, forceSpeedFalloff*forceDistanceFalloff);
 

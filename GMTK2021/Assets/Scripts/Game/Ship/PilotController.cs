@@ -43,9 +43,9 @@ public class PilotController : ShipController
         bool interact = context.performed;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        UpdateMovement(Time.deltaTime);
+        UpdateMovement(Time.fixedDeltaTime);
     }
 
     private void UpdateMovement(float deltaTime)

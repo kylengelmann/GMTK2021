@@ -55,6 +55,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
+        Application.targetFrameRate = 60;
 #if UNITY_EDITOR
         if (SceneManager.sceneCount == 1)
         {
