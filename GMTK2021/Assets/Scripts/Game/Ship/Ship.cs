@@ -10,6 +10,7 @@ public class Ship : MonoBehaviour
     public Tether tether;
 
     [HideInInspector] public int Health;
+    public int HitCount = 8;
     public int MaxHealth = 3;
 
     private void Start()
@@ -20,6 +21,7 @@ public class Ship : MonoBehaviour
     public void OnHit()
     {
         Health--;
+        HitCount--;
         if(Health <= 0)
         {
             Debug.Log("Dead");
@@ -29,5 +31,6 @@ public class Ship : MonoBehaviour
     public void Repair()
     {
         Health = Mathf.Min(Health + 1, MaxHealth);
+        HitCount++;
     }
 }

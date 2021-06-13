@@ -9,6 +9,7 @@ public class PlayerCharacter : Character
     protected Vector3 moveInput { get; private set; }
 
     public ShipController currentStation;
+    public ShipController usedStation { get; private set; }
     public bool usingStation;
 
     protected Vector3 velocity;
@@ -47,12 +48,26 @@ public class PlayerCharacter : Character
         moveInput = inMoveInput;
     }
 
+    public void KickOffControls()
+    {
+        usingStation = false;
+        if (usedStation)
+        {
+            usedStation.setPlayerUsing(false);
+        }
+    }
+
     public void OnInteract()
     {
         usingStation = !usingStation && currentStation;
         if (currentStation)
-        {
+        {   
+            if(usingStation)
+            {
+                usedStation = currentStation;
+            }
+
             currentStation.setPlayerUsing(usingStation);
-         }
+        }
     }
 }
