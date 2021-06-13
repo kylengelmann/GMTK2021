@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4150621825497234095}
   - component: {fileID: 8691776810952004064}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: topRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 771168529009005803}
   - component: {fileID: 6310119203399865894}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: backMid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerUsing: 0
   pilotMove: {x: 0, y: 0}
-  TetherSpeed: 0
+  shipBody: {fileID: 4558162497934666574}
+  force: {x: 0, y: 0}
+  forceDirection: {x: 0, y: 0}
+  SpeedInThrustDir: 0
+  acceleration: 1
+  maxSpeed: 2
+  maxThrustSpeed: 1.5
+  ThrustForceFalloffStartSpeed: 0.7
 --- !u!1 &3753300539945281735
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1306288850458309616}
   - component: {fileID: 6825222765575912113}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: topRightCorner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5240962180940719574}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: hullColliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +266,7 @@ Transform:
   - {fileID: 771168529009005803}
   - {fileID: 7327808282820658069}
   m_Father: {fileID: 8151087307734646844}
-  m_RootOrder: 19
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5320767548214835981
 GameObject:
@@ -304,7 +311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6395770833520820568}
   - component: {fileID: 1462762242345501774}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: botLeftCorner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +418,7 @@ GameObject:
   - component: {fileID: 6406665239312482539}
   - component: {fileID: 4021255981708579058}
   - component: {fileID: 4558162497934666574}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spaceShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1176156437001764572}
   - component: {fileID: 4050275400153870027}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: frontMid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +569,7 @@ MonoBehaviour:
     width: 0.2
   m_Looped: 1
   m_Waypoints:
-  - position: {x: -7.7526064, y: 3.643388, z: 0}
+  - position: {x: -7.7526064, y: 3.30659, z: 0}
     roll: 0
   - position: {x: -5.1752987, y: 4.677436, z: 0}
     roll: 0
@@ -655,7 +662,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6993219686906573681}
   - component: {fileID: 652846690843501912}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: frontNub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,7 +707,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4038125068666633164}
   - component: {fileID: 646210109972551188}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: topLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -744,7 +751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6829375252749824805}
   - component: {fileID: 1774474460920412445}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: botMid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,20 +785,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 0.6686735, z: 15.75}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!64 &4353264873962181420
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9014130890338948531}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 3bce9294dada0f34b9a354ff6f3e997d, type: 3}
 --- !u!1 &9023154068939285916
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,7 +795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7327808282820658069}
   - component: {fileID: 3983058476955134501}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: backTopCorner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -836,6 +829,63 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 0.6686735, z: 1.06}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &45070303544337762
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8151087307734646844}
+    m_Modifications:
+    - target: {fileID: 318969579978104810, guid: ee2736466506b144a954987c17a48543, type: 3}
+      propertyPath: m_Name
+      value: ShipDamagables
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057909091498169765, guid: ee2736466506b144a954987c17a48543, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057909091498169765, guid: ee2736466506b144a954987c17a48543, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057909091498169765, guid: ee2736466506b144a954987c17a48543, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057909091498169765, guid: ee2736466506b144a954987c17a48543, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057909091498169765, guid: ee2736466506b144a954987c17a48543, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057909091498169765, guid: ee2736466506b144a954987c17a48543, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057909091498169765, guid: ee2736466506b144a954987c17a48543, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057909091498169765, guid: ee2736466506b144a954987c17a48543, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057909091498169765, guid: ee2736466506b144a954987c17a48543, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057909091498169765, guid: ee2736466506b144a954987c17a48543, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057909091498169765, guid: ee2736466506b144a954987c17a48543, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ee2736466506b144a954987c17a48543, type: 3}
 --- !u!1001 &1411473480920499964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -983,11 +1033,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13471efe24c31234b8deeffe99b2dba1, type: 3}
---- !u!1 &9014130890338948531 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3862759149902361455, guid: 13471efe24c31234b8deeffe99b2dba1, type: 3}
-  m_PrefabInstance: {fileID: 5225273645048702684}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8151087307734646844 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4151645999844992736, guid: 13471efe24c31234b8deeffe99b2dba1, type: 3}
