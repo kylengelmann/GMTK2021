@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour, GMTKControls.IInsideGameplayActions, GMTKControls.IOutsideGameplayActions
 {
     GMTKControls controls;
-    public bool playerIsUsingStation;
 
     public WalkyPlayerCharacter InsidePlayerCharacter { get; private set; }
 
