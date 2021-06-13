@@ -8,6 +8,8 @@ public class WalkyPlayerCharacter : PlayerCharacter
     public float WalkForceFalloffStartSpeed = 5f;
     public float WalkForce = 30f;
 
+    public Animator anim;
+
     protected override void UpdateMovement(float deltaTime)
     {
         float moveInputX = moveInput.x;

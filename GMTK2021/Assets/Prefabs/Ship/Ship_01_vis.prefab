@@ -608,7 +608,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2299565111306254040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.99999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8732898672781988469}
@@ -616,8 +616,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -60, y: 107}
-  m_SizeDelta: {x: 460.27, y: 135.75}
+  m_AnchoredPosition: {x: -0.0000019073, y: -22}
+  m_SizeDelta: {x: 608.37, y: 307.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6188162446628394023
 CanvasRenderer:
@@ -649,18 +649,21 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 63a51d8bbf0844146baa8f8fc43b3585, type: 3}
-    m_FontSize: 49
+    m_FontSize: 84
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 87
+    m_MaxSize: 147
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HULL
+  m_Text: 'HULL 100%
+
+
+    WARP 100%'
 --- !u!1 &2383084755613450680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2389,6 +2392,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4151645999844992736}
     m_Modifications:
+    - target: {fileID: 7849790937609375175, guid: 8a3241276fe691644953c22b843f942d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4a03602b2b31f474087868aee6b1c696, type: 2}
     - target: {fileID: 7956382094844506057, guid: 8a3241276fe691644953c22b843f942d, type: 3}
       propertyPath: m_RootOrder
       value: 5
