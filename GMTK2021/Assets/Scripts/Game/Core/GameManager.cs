@@ -178,6 +178,7 @@ public class GameManager : Singleton<GameManager>
                         GameObject outsideCharacterGO = Instantiate(gameData.OutsidePlayerPrefab, ship.OutsidePlayerSpawn.position, ship.OutsidePlayerSpawn.rotation);
                         if (outsideCharacterGO)
                         {
+                            outsideCharacterGO.transform.parent = ShipGO.transform;
                             outsideCharacter = outsideCharacterGO.GetComponent<FloatyPlayerCharacter>();
                             if (!outsideCharacter)
                             {

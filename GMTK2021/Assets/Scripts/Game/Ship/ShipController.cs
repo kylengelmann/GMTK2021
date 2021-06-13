@@ -30,7 +30,7 @@ public class ShipController : MonoBehaviour, GMTKControls.IGameplayActions
 
     }
 
-    public void setPlayerUsing(bool newIsPlayerUsing)
+    public virtual void setPlayerUsing(bool newIsPlayerUsing)
     {
         playerUsing = newIsPlayerUsing;
         if(playerUsing)
