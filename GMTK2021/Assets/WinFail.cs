@@ -39,6 +39,8 @@ public class WinFail : MonoBehaviour
 
         warpDrivePercent = currentTime / warpDriveChargeTime;
 
+        GameManager.ship.warpRenderer.material.SetFloat("Gauge_Progress", warpDrivePercent);
+
         if (currentTime > warpDriveChargeTime)
         {
             Win();
