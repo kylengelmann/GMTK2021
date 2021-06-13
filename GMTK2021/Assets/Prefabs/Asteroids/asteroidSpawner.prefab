@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8231223221956187988}
   - component: {fileID: 8231223221956187989}
   - component: {fileID: 8231223221956187987}
+  - component: {fileID: 1670799134}
   m_Layer: 0
   m_Name: asteroidSpawner
   m_TagString: Untagged
@@ -49,9 +50,27 @@ MonoBehaviour:
   - {fileID: 4437365125955286681, guid: 5843b8e6fb287e34d935a58d159fa844, type: 3}
   - {fileID: 4437365125955286681, guid: 4972d763c23a0c2449cd482caec1e583, type: 3}
   - {fileID: 4437365125955286681, guid: 21a14cc8a02abc64c8654b23ce779bd4, type: 3}
-  minSpawnFreq: 9
-  maxSpawnFreq: 14
+  minSpawnTime: 6
+  maxSpawnTime: 20
+  baseSpawnTime: 100
   nextSpawnTime: 0
+  difficulty: 0
+  maxDiffTime: 120
+  maxDifficulty: 0
+  diffScale_1: 0.5
+  phase1scale: 0.4
+  diffScale_2: 1
+  phase2scale: 0.8
+  diffScale_3: 0.8
+  diffRise: 0
+  endDownScale: 1.35
+  endUpScale: -1.5
+  diffScale: 0
+  wobblePeriod: 30
+  wobbleTime: 0
+  currentDifficulty: 0
+  currentPhase: 0
+  currentTime: 0
   spawnRadius: 35
   spawnLocation: {x: 0, y: 0}
 --- !u!58 &8231223221956187987
@@ -70,3 +89,43 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 14
+--- !u!114 &1670799134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8231223221956187990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857f029ac99f1c84c993b7b25f538b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroidPrefabs:
+  - {fileID: 7384355526308278024, guid: c5b1b423e7172a84ebae8a2c11ea9827, type: 3}
+  - {fileID: 4437365125955286681, guid: 5843b8e6fb287e34d935a58d159fa844, type: 3}
+  - {fileID: 4437365125955286681, guid: 4972d763c23a0c2449cd482caec1e583, type: 3}
+  - {fileID: 4437365125955286681, guid: 21a14cc8a02abc64c8654b23ce779bd4, type: 3}
+  minSpawnTime: 9
+  maxSpawnTime: 17
+  baseSpawnTime: 100
+  nextSpawnTime: 0
+  difficulty: 0
+  maxDiffTime: 120
+  maxDifficulty: 0
+  diffScale_1: 0.5
+  phase1scale: 0.4
+  diffScale_2: 0.8
+  phase2scale: 0.7
+  diffScale_3: 1
+  diffRise: 0
+  endDownScale: 1
+  endUpScale: -1.25
+  diffScale: 0
+  wobblePeriod: 30
+  wobbleTime: 0
+  currentDifficulty: 0
+  currentPhase: 0
+  currentTime: 0
+  spawnRadius: 35
+  spawnLocation: {x: 0, y: 0}

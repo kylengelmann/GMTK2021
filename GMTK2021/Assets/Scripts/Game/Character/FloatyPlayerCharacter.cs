@@ -11,10 +11,17 @@ public class FloatyPlayerCharacter : PlayerCharacter
     public float ThrustForceFalloffStartSpeed = 5f;
     public float ThrustForceFalloffStartDistance = 1.5f;
 
+    public Animator anim;
+
     public bool bIsThrusting { get; private set; }
     public Vector3 ThrustLocation { get; private set; }
 
     Joint tetherAttachJoint;
+
+    private void Update()
+    {
+        anim.SetBool("IsInteracting", usingStation);
+    }
 
     protected override void Start()
     {

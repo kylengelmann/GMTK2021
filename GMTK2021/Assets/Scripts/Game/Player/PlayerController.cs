@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour, GMTKControls.IInsideGameplayActio
         Vector2 moveInput = context.ReadValue<Vector2>();
 
         InsidePlayerCharacter.SetMoveInput(Vector3.right * moveInput.x + Vector3.up * moveInput.y);
+
     }
 
     public void OnInsideInteract(InputAction.CallbackContext context)

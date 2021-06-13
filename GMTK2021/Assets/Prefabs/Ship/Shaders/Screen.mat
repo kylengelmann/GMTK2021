@@ -45,9 +45,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Scroll_Speed: -0.12
+    - Bars_Scale: 3.34
+    - Scroll_Speed: -0.44
     m_Colors:
-    - Color_A: {r: 0, g: 0.7372549, b: 0.7309959, a: 0}
-    - Color_B: {r: 0.04416568, g: 0.7169812, b: 0, a: 0}
-    - Color_C: {r: 0.3972944, g: 0.9056604, b: 0.72679085, a: 0}
+    - Color_A: {r: 0.09198114, g: 0.5, b: 0.4956594, a: 0}
+    - Color_B: {r: 0.179151, g: 0.8679245, b: 0.13510147, a: 0}
+    - Color_C: {r: 0.18262726, g: 0.6792453, b: 0.50302607, a: 0}
   m_BuildTextureStacks: []
