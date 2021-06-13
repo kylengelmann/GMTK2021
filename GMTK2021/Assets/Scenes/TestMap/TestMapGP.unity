@@ -328,6 +328,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: asteroidSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187990, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
 --- !u!1 &1238345183 stripped
