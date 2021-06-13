@@ -11,8 +11,11 @@ public class WalkyPlayerCharacter : PlayerCharacter
     public GameObject tetherLoc;
     public GameObject pilotLoc;
 
+
+
     public Animator anim;
     public float moveInputX;
+
     protected override void UpdateMovement(float deltaTime)
     {
         moveInputX = moveInput.x;
