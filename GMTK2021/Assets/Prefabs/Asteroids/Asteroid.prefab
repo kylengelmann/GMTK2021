@@ -141,3 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bc089f47c93b843851592a446631e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minSpeed: 5
+  maxSpeed: 5
+  speed: 0
+  targetRadius: 14
+  targetLocation: {x: 0, y: 0}
+  direction: {x: 0, y: 0, z: 0}
