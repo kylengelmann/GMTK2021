@@ -49,9 +49,27 @@ MonoBehaviour:
   - {fileID: 4437365125955286681, guid: 5843b8e6fb287e34d935a58d159fa844, type: 3}
   - {fileID: 4437365125955286681, guid: 4972d763c23a0c2449cd482caec1e583, type: 3}
   - {fileID: 4437365125955286681, guid: 21a14cc8a02abc64c8654b23ce779bd4, type: 3}
-  minSpawnFreq: 9
-  maxSpawnFreq: 14
+  minSpawnTime: 6
+  maxSpawnTime: 20
+  baseSpawnTime: 100
   nextSpawnTime: 0
+  difficulty: 0
+  maxDiffTime: 120
+  maxDifficulty: 0
+  diffScale_1: 0.5
+  phase1scale: 0.4
+  diffScale_2: 1
+  phase2scale: 0.8
+  diffScale_3: 0.8
+  diffRise: 0
+  endDownScale: -1
+  endUpScale: 1
+  diffScale: 0
+  wobblePeriod: 30
+  wobbleTime: 0
+  currentDifficulty: 0
+  currentPhase: 0
+  currentTime: 0
   spawnRadius: 35
   spawnLocation: {x: 0, y: 0}
 --- !u!58 &8231223221956187987

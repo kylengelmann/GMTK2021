@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45084894, g: 0.49909925, b: 0.56570596, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -173,6 +173,26 @@ PrefabInstance:
     - target: {fileID: 8231223221956187988, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187989, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: endUpScale
+      value: -1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187989, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: maxDiffTime
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187989, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: phase1scale
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187989, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: phase2scale
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187989, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: endDownScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8231223221956187990, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
       propertyPath: m_Name
