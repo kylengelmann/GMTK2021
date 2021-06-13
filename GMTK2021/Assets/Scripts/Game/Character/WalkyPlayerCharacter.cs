@@ -24,8 +24,6 @@ public class WalkyPlayerCharacter : PlayerCharacter
         float forceMagnitude = Mathf.Lerp(WalkForce, 0f, forceSpeedFalloff);
 
         characterRigidbody.AddForce(moveAxisDirection *forceMagnitude, ForceMode.Acceleration);
-        
-
     }
 
     protected override void Collidable(bool collidable)

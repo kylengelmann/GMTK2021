@@ -20,11 +20,11 @@ public class PlayerCharacter : Character
         characterRigidbody = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!usingStation)
         {
-            UpdateMovement(Time.deltaTime);
+            UpdateMovement(Time.fixedDeltaTime);
             Collidable(true);
             characterRigidbody.isKinematic = false;
         }

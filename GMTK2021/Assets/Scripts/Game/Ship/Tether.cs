@@ -7,4 +7,5 @@ using UnityEditor;
 public class Tether : MonoBehaviour
 {
     public GameObject TetherEnd;
+    public GameObject TetherAnchor;
 }
