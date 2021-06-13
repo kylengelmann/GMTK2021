@@ -145,7 +145,7 @@ MonoBehaviour:
   minSpeed: 1
   maxSpeed: 3
   speed: 0
-  minScale: 0.6
+  minScale: 0.8
   maxScale: 1.7
   scale: 0
   minRot: 0.2

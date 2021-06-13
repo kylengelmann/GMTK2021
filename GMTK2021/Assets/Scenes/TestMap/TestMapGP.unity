@@ -123,6 +123,95 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &27831554
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8231223221956187988, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187988, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187988, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187988, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187988, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187988, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187988, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187988, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187988, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187988, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187988, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187989, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: endUpScale
+      value: -1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187989, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: maxDiffTime
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187989, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: phase1scale
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187989, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: phase2scale
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187989, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: endDownScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187989, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: maxSpawnTime
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187989, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: minSpawnTime
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187990, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: m_Name
+      value: asteroidSpawner_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187990, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
 --- !u!1001 &148288600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -231,20 +320,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8231223221956187989, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
-      propertyPath: maxSpawnFreq
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231223221956187989, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
-      propertyPath: minSpawnFreq
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 8231223221956187990, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
       propertyPath: m_Name
       value: asteroidSpawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+--- !u!1 &1238345183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8231223221956187990, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+  m_PrefabInstance: {fileID: 27831554}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1238345184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238345183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857f029ac99f1c84c993b7b25f538b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroidPrefabs:
+  - {fileID: 7384355526308278024, guid: c5b1b423e7172a84ebae8a2c11ea9827, type: 3}
+  - {fileID: 4437365125955286681, guid: 5843b8e6fb287e34d935a58d159fa844, type: 3}
+  - {fileID: 4437365125955286681, guid: 4972d763c23a0c2449cd482caec1e583, type: 3}
+  - {fileID: 4437365125955286681, guid: 21a14cc8a02abc64c8654b23ce779bd4, type: 3}
+  minSpawnTime: 9
+  maxSpawnTime: 18
+  baseSpawnTime: 100
+  nextSpawnTime: 0
+  difficulty: 0
+  maxDiffTime: 180
+  maxDifficulty: 0
+  diffScale_1: 0.5
+  phase1scale: 0.4
+  diffScale_2: 1
+  phase2scale: 0.8
+  diffScale_3: 0.8
+  diffRise: 0
+  endDownScale: 1
+  endUpScale: -1.25
+  diffScale: 0
+  wobblePeriod: 30
+  wobbleTime: 0
+  currentDifficulty: 0
+  currentPhase: 0
+  currentTime: 0
+  spawnRadius: 35
+  spawnLocation: {x: 0, y: 0}
 --- !u!1001 &1331051997
 PrefabInstance:
   m_ObjectHideFlags: 0
