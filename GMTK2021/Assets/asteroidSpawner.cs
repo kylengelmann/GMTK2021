@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class asteroidSpawner : MonoBehaviour
 {
-    public GameObject asteroid_1;
-    public GameObject asteroid_2;
-    public GameObject asteroid_3;
+    public List<GameObject> asteroidPrefabs;
 
     public float minSpawnFreq;
     public float maxSpawnFreq;
     public float nextSpawnTime;
+
+
 
     public float spawnRadius = 35f;
 
@@ -19,11 +19,13 @@ public class asteroidSpawner : MonoBehaviour
     public void spawn()
     {
         //spawn at circumference at spawnRadius
+        int numAsteroidPrefabs = asteroidPrefabs.Count;
+
         spawnLocation = Random.insideUnitCircle.normalized* spawnRadius;
         Vector3 realSpawnLocation = new Vector3(spawnLocation.x, spawnLocation.y, 0f);
         Quaternion zeroRot = Quaternion.identity;
-        Instantiate(asteroid, realSpawnLocation, zeroRot);
-        float nextSpawnTime = Random.Range(minSpawnFreq, maxSpawnFreq) + Time.time;
+        Instantiate(asteroidPrefabs[Random.Range(0, numAsteroidPrefabs)], realSpawnLocation, zeroRot);
+        nextSpawnTime = Random.Range(minSpawnFreq, maxSpawnFreq) + Time.time;
     }
 
     // Update is called once per frame

@@ -396,6 +396,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8231223221956187987, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: m_Radius
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 8231223221956187988, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -439,6 +443,18 @@ PrefabInstance:
     - target: {fileID: 8231223221956187988, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187989, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: asteroid
+      value: 
+      objectReference: {fileID: 7384355526308278024, guid: c5b1b423e7172a84ebae8a2c11ea9827, type: 3}
+    - target: {fileID: 8231223221956187989, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: maxSpawnFreq
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231223221956187989, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
+      propertyPath: minSpawnFreq
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8231223221956187990, guid: a90e9423b89fa944f9269e78730b2d4f, type: 3}
       propertyPath: m_Name

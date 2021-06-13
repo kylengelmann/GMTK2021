@@ -44,9 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857f029ac99f1c84c993b7b25f538b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroid: {fileID: 7384355526308278024, guid: c5b1b423e7172a84ebae8a2c11ea9827, type: 3}
-  minSpawnFreq: 0
-  maxSpawnFreq: 0
+  asteroidPrefabs:
+  - {fileID: 7384355526308278024, guid: c5b1b423e7172a84ebae8a2c11ea9827, type: 3}
+  - {fileID: 4437365125955286681, guid: 5843b8e6fb287e34d935a58d159fa844, type: 3}
+  - {fileID: 4437365125955286681, guid: 4972d763c23a0c2449cd482caec1e583, type: 3}
+  - {fileID: 4437365125955286681, guid: 21a14cc8a02abc64c8654b23ce779bd4, type: 3}
+  minSpawnFreq: 9
+  maxSpawnFreq: 14
   nextSpawnTime: 0
   spawnRadius: 35
   spawnLocation: {x: 0, y: 0}

@@ -312,6 +312,9 @@ public class @GMTKControls : IInputActionCollection, IDisposable
         m_OutsideGameplay = asset.FindActionMap("OutsideGameplay", throwIfNotFound: true);
         m_OutsideGameplay_Click = m_OutsideGameplay.FindAction("Click", throwIfNotFound: true);
         m_OutsideGameplay_OutsideInteract = m_OutsideGameplay.FindAction("OutsideInteract", throwIfNotFound: true);
+        // PauseMenu
+        m_PauseMenu = asset.FindActionMap("PauseMenu", throwIfNotFound: true);
+        m_PauseMenu_Pause = m_PauseMenu.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
