@@ -66,6 +66,13 @@ MonoBehaviour:
   currentStation: {fileID: 0}
   usingStation: 0
   playerController: {fileID: 0}
+  heads:
+  - {fileID: 8693815310037660876}
+  - {fileID: 8444823298084008096}
+  - {fileID: 8478172787578729475}
+  - {fileID: 1010808217777401315}
+  - {fileID: 3519790674013235182}
+  - {fileID: 111551062234385488}
   acceleration: 5
   maxThrustSpeed: 10
   ThrustForceFalloffStartSpeed: 5
@@ -128,6 +135,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1101839134687691469}
     m_Modifications:
+    - target: {fileID: 919132149444050555, guid: 1a395f03c9a5ead4fba4262501068546, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1908370131981943228, guid: 1a395f03c9a5ead4fba4262501068546, type: 3}
       propertyPath: m_Controller
       value: 
@@ -186,5 +197,35 @@ Transform:
 --- !u!95 &1672737953005400983 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1908370131981943228, guid: 1a395f03c9a5ead4fba4262501068546, type: 3}
+  m_PrefabInstance: {fileID: 958464937939481131}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8693815310037660876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8497030524226307815, guid: 1a395f03c9a5ead4fba4262501068546, type: 3}
+  m_PrefabInstance: {fileID: 958464937939481131}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8444823298084008096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8682707828574634635, guid: 1a395f03c9a5ead4fba4262501068546, type: 3}
+  m_PrefabInstance: {fileID: 958464937939481131}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8478172787578729475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8711549319625295400, guid: 1a395f03c9a5ead4fba4262501068546, type: 3}
+  m_PrefabInstance: {fileID: 958464937939481131}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1010808217777401315 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 237066250195722184, guid: 1a395f03c9a5ead4fba4262501068546, type: 3}
+  m_PrefabInstance: {fileID: 958464937939481131}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3519790674013235182 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4437708301836621253, guid: 1a395f03c9a5ead4fba4262501068546, type: 3}
+  m_PrefabInstance: {fileID: 958464937939481131}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &111551062234385488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149444050555, guid: 1a395f03c9a5ead4fba4262501068546, type: 3}
   m_PrefabInstance: {fileID: 958464937939481131}
   m_PrefabAsset: {fileID: 0}
