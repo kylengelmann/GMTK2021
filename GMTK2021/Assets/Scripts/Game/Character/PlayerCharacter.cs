@@ -15,9 +15,13 @@ public class PlayerCharacter : Character
 
     public PlayerController playerController;
 
+    public List<GameObject> heads;
+
     protected virtual void Start()
     {
         characterRigidbody = GetComponent<Rigidbody>();
+        int numHeads = heads.Count;
+        heads[Random.Range(0, numHeads)].SetActive(true);
     }
 
     private void FixedUpdate()
