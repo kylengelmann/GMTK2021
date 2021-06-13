@@ -326,6 +326,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 1366203117, guid: 23aa7435ad15d204ea0d33bdd9c3b37a, type: 3}
+      propertyPath: m_Antialiasing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4482609759474540445, guid: 23aa7435ad15d204ea0d33bdd9c3b37a, type: 3}
       propertyPath: m_RootOrder
       value: 0
