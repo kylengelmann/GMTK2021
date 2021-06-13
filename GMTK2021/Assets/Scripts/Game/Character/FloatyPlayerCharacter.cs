@@ -5,10 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class FloatyPlayerCharacter : PlayerCharacter
 {
-    Rigidbody floatyRigidbody;
-
     public float acceleration = 10f;
-    public float thrustDrag = 1f;
 
     public float maxThrustSpeed = 10f;
     public float ThrustForceFalloffStartSpeed = 5f;
@@ -22,8 +19,6 @@ public class FloatyPlayerCharacter : PlayerCharacter
     protected override void Start()
     {
         base.Start();
-
-        floatyRigidbody = GetComponent<Rigidbody>();
 
         tetherAttachJoint = GetComponent<Joint>();
         tetherAttachJoint.connectedBody = GameManager.ship.tether.TetherEnd.GetComponent<Rigidbody>();
@@ -43,16 +38,14 @@ public class FloatyPlayerCharacter : PlayerCharacter
         float distanceFromCursor = forceDirection.magnitude;
         forceDirection = forceDirection / distanceFromCursor;
 
-        float SpeedInThrustDir = Vector3.Dot(floatyRigidbody.velocity, forceDirection);
+        float SpeedInThrustDir = Vector3.Dot(characterRigidbody.velocity, forceDirection);
 
         float forceSpeedFalloff = Mathf.Clamp01((SpeedInThrustDir - ThrustForceFalloffStartSpeed) / (maxThrustSpeed - ThrustForceFalloffStartSpeed));
         float forceDistanceFalloff = Mathf.Clamp01(ThrustForceFalloffStartDistance - distanceFromCursor);
 
-        Debug.Log(forceDistanceFalloff);
-
         Vector3 force = forceDirection * Mathf.Lerp(acceleration, 0, forceSpeedFalloff*forceDistanceFalloff);
 
-        floatyRigidbody.AddForce(force, ForceMode.Acceleration);
+        characterRigidbody.AddForce(force, ForceMode.Acceleration);
     }
 
     public void SetThrust(bool newIsThrusting)

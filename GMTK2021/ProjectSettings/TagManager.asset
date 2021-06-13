@@ -15,7 +15,7 @@ TagManager:
   - OutsidePlayer
   - Tether
   - Ship
-  - 
+  - OutsideShip
   - Asteroid
   - Damagable
   - 

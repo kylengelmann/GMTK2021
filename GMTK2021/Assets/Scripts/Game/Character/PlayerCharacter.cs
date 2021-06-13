@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCharacter : Character
-{ 
+{
+    protected Rigidbody characterRigidbody { get; private set; }
+
     protected Vector3 moveInput { get; private set; }
 
     public ShipController currentStation;
@@ -15,18 +17,20 @@ public class PlayerCharacter : Character
 
     protected virtual void Start()
     {
-
+        characterRigidbody = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!usingStation)
         {
-            UpdateMovement(Time.deltaTime);
+            UpdateMovement(Time.fixedDeltaTime);
             Collidable(true);
+            characterRigidbody.isKinematic = false;
         }
         if (usingStation)
         {
+            characterRigidbody.isKinematic = true;
             Collidable(false);
         }
     }

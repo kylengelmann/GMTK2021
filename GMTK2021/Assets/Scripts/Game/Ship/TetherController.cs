@@ -7,12 +7,12 @@ public class TetherController : ShipController
 {
     public GameObject Tether;
     public Vector2 tetherMove;
-    
+
     void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<WalkyPlayerCharacter>())
         {
-        other.gameObject.GetComponent<WalkyPlayerCharacter>().currentStation = this;
+            other.gameObject.GetComponent<WalkyPlayerCharacter>().currentStation = this;
         }
     }
 
@@ -32,7 +32,24 @@ public class TetherController : ShipController
 
     private void Update()
     {
-        MoveTether(Time.deltaTime * TetherSpeed * tetherMove.x);
+        float deltaPos = Time.deltaTime * TetherSpeed * tetherMove.x;
+        TetherPos += deltaPos;
+
+        TetherPos = TetherTrack.StandardizePathDistance(TetherPos);
+
+        Tether.GetComponent<Tether>().TetherAnchor.transform.position = TetherTrack.EvaluatePositionAtUnit(TetherPos, Cinemachine.CinemachinePathBase.PositionUnits.Distance);
+        Vector3 tangent = TetherTrack.EvaluateTangentAtUnit(TetherPos, Cinemachine.CinemachinePathBase.PositionUnits.Distance);
+
+        Vector3 up = Vector3.Cross(Vector3.forward, tangent).normalized;
+
+        Tether.GetComponent<Tether>().TetherAnchor.transform.rotation = Quaternion.LookRotation(Vector3.forward, up);
+
+        MoveTether();
+    }
+
+    private void FixedUpdate()
+    {
+        //MoveTether();
     }
 
     public override void OnMove(InputAction.CallbackContext context)
@@ -44,12 +61,8 @@ public class TetherController : ShipController
     {
         bool interact = context.performed;
     }
-    void MoveTether(float deltaPos)
+    void MoveTether()
     {
-        TetherPos += deltaPos;
-
-        TetherPos = TetherTrack.StandardizePathDistance(TetherPos);
-
         Tether.transform.position = TetherTrack.EvaluatePositionAtUnit(TetherPos, Cinemachine.CinemachinePathBase.PositionUnits.Distance);
     }
 
