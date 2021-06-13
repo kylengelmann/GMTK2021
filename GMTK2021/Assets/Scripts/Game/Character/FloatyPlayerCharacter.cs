@@ -52,4 +52,9 @@ public class FloatyPlayerCharacter : PlayerCharacter
     {
         bIsThrusting = newIsThrusting;
     }
+
+    protected override void Collidable(bool collidable)
+    {
+        Physics.IgnoreLayerCollision(7, 10, !collidable);
+    }
 }

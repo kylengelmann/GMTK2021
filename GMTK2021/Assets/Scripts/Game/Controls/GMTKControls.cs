@@ -232,6 +232,14 @@ public class @GMTKControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""OutsideInteract"",
+                    ""type"": ""Button"",
+                    ""id"": ""4a25abc0-45e7-49d9-a834-8136384d9697"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -243,6 +251,17 @@ public class @GMTKControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e9668b68-cdd6-4e1f-a0e2-be1176852147"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OutsideInteract"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -265,6 +284,7 @@ public class @GMTKControls : IInputActionCollection, IDisposable
         // OutsideGameplay
         m_OutsideGameplay = asset.FindActionMap("OutsideGameplay", throwIfNotFound: true);
         m_OutsideGameplay_Click = m_OutsideGameplay.FindAction("Click", throwIfNotFound: true);
+        m_OutsideGameplay_OutsideInteract = m_OutsideGameplay.FindAction("OutsideInteract", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -430,11 +450,13 @@ public class @GMTKControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_OutsideGameplay;
     private IOutsideGameplayActions m_OutsideGameplayActionsCallbackInterface;
     private readonly InputAction m_OutsideGameplay_Click;
+    private readonly InputAction m_OutsideGameplay_OutsideInteract;
     public struct OutsideGameplayActions
     {
         private @GMTKControls m_Wrapper;
         public OutsideGameplayActions(@GMTKControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Click => m_Wrapper.m_OutsideGameplay_Click;
+        public InputAction @OutsideInteract => m_Wrapper.m_OutsideGameplay_OutsideInteract;
         public InputActionMap Get() { return m_Wrapper.m_OutsideGameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -447,6 +469,9 @@ public class @GMTKControls : IInputActionCollection, IDisposable
                 @Click.started -= m_Wrapper.m_OutsideGameplayActionsCallbackInterface.OnClick;
                 @Click.performed -= m_Wrapper.m_OutsideGameplayActionsCallbackInterface.OnClick;
                 @Click.canceled -= m_Wrapper.m_OutsideGameplayActionsCallbackInterface.OnClick;
+                @OutsideInteract.started -= m_Wrapper.m_OutsideGameplayActionsCallbackInterface.OnOutsideInteract;
+                @OutsideInteract.performed -= m_Wrapper.m_OutsideGameplayActionsCallbackInterface.OnOutsideInteract;
+                @OutsideInteract.canceled -= m_Wrapper.m_OutsideGameplayActionsCallbackInterface.OnOutsideInteract;
             }
             m_Wrapper.m_OutsideGameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -454,6 +479,9 @@ public class @GMTKControls : IInputActionCollection, IDisposable
                 @Click.started += instance.OnClick;
                 @Click.performed += instance.OnClick;
                 @Click.canceled += instance.OnClick;
+                @OutsideInteract.started += instance.OnOutsideInteract;
+                @OutsideInteract.performed += instance.OnOutsideInteract;
+                @OutsideInteract.canceled += instance.OnOutsideInteract;
             }
         }
     }
@@ -475,5 +503,6 @@ public class @GMTKControls : IInputActionCollection, IDisposable
     public interface IOutsideGameplayActions
     {
         void OnClick(InputAction.CallbackContext context);
+        void OnOutsideInteract(InputAction.CallbackContext context);
     }
 }

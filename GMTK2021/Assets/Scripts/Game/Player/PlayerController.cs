@@ -63,6 +63,12 @@ public class PlayerController : MonoBehaviour, GMTKControls.IInsideGameplayActio
         InsidePlayerCharacter.OnInteract();
     }
 
+    public void OnOutsideInteract(InputAction.CallbackContext context)
+    {
+        bool interact = context.started;
+        OutsidePlayerCharacter.OnInteract();
+    }
+
     public void OnClick(InputAction.CallbackContext context)
     {
         if(context.ReadValueAsButton())
