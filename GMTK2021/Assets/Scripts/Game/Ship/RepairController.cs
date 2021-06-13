@@ -12,6 +12,14 @@ public class RepairController : ShipController
 
     bool bWasDamaged = false;
 
+    Collider trigger;
+
+    private void Start()
+    {
+        trigger = GetComponent<Collider>();
+        trigger.enabled = false;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<FloatyPlayerCharacter>())
@@ -43,6 +51,7 @@ public class RepairController : ShipController
             if(damagable.bIsDamaged)
             {
                 timeTilDone = RepairTime;
+                trigger.enabled = true;
             }
         }
 
@@ -54,6 +63,7 @@ public class RepairController : ShipController
             if(timeTilDone <= 0f)
             {
                 damagable.OnRepair();
+                trigger.enabled = false;
             }
         }
     }

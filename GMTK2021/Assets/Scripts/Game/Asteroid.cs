@@ -54,4 +54,9 @@ public class Asteroid : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public void OnShot()
+    {
+        Destroy(gameObject);
+    }
 }
