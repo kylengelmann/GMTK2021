@@ -22,6 +22,7 @@ public class PilotController : ShipController
         if (other.GetComponent<WalkyPlayerCharacter>())
         {
             other.gameObject.GetComponent<WalkyPlayerCharacter>().currentStation = this;
+            other.gameObject.GetComponent<WalkyPlayerCharacter>().stationImUsing = 2;
         }
     }
 
@@ -30,6 +31,7 @@ public class PilotController : ShipController
         if (other.GetComponent<WalkyPlayerCharacter>())
         {
             other.gameObject.GetComponent<WalkyPlayerCharacter>().currentStation = null;
+            other.gameObject.GetComponent<WalkyPlayerCharacter>().stationImUsing = 0;
         }
     }
 

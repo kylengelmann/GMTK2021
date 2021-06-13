@@ -13,6 +13,7 @@ public class TetherController : ShipController
         if (other.GetComponent<WalkyPlayerCharacter>())
         {
             other.gameObject.GetComponent<WalkyPlayerCharacter>().currentStation = this;
+            other.gameObject.GetComponent<WalkyPlayerCharacter>().stationImUsing = 1;
         }
     }
 
@@ -21,6 +22,7 @@ public class TetherController : ShipController
         if (other.GetComponent<WalkyPlayerCharacter>())
         {
             other.gameObject.GetComponent<WalkyPlayerCharacter>().currentStation = null;
+            other.gameObject.GetComponent<WalkyPlayerCharacter>().stationImUsing = 0;
         }
     }
 
