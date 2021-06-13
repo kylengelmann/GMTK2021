@@ -25,6 +25,9 @@ public class Asteroid : MonoBehaviour
 
     public Vector3 direction;
 
+    public GameObject OnShotFX;
+    public GameObject OnHitFX;
+
     private void Start()
     {
         scale = Mathf.Lerp(minScale, maxScale, Random.value);
@@ -52,11 +55,20 @@ public class Asteroid : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if(OnHitFX)
+        {
+            Instantiate(OnHitFX, transform.position, transform.rotation);
+        }
+
         Destroy(gameObject);
     }
 
     public void OnShot()
     {
+        if(OnShotFX)
+        {
+            Instantiate(OnShotFX, transform.position, transform.rotation);
+        }
         Destroy(gameObject);
     }
 }
