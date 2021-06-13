@@ -14,6 +14,8 @@ public class RepairController : ShipController
 
     Collider trigger;
 
+    public Animator animator;
+
     private void Start()
     {
         trigger = GetComponent<Collider>();
@@ -41,7 +43,7 @@ public class RepairController : ShipController
     {
         base.setPlayerUsing(newIsPlayerUsing);
 
-        
+        animator.SetBool("Repair", newIsPlayerUsing);
     }
 
     private void Update()
@@ -67,6 +69,4 @@ public class RepairController : ShipController
             }
         }
     }
-
-
 }
