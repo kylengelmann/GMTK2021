@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cf546ba546416cb4b95439fe4b1c30d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 898f41784e0a94f4589fe8fd7ed812fb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -457,14 +457,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 60f61cf199adcf5419ee5d2bd69aff50, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 6657451382351403849, guid: 4b12d9aca93a2484abcb17d8227bb5fe, type: 3}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b8742b9984cb5b04d99a4f02afac3cf3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 826ecbd5fa3c9614caf6ef30dcbefe31, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
