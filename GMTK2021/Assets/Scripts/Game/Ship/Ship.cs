@@ -9,6 +9,8 @@ public class Ship : MonoBehaviour
 
     public Tether tether;
 
+    public Renderer warpRenderer;
+
     [HideInInspector] public int Health;
     public int HitCount = 8;
     public int MaxHealth = 3;
