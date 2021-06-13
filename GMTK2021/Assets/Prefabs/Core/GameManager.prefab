@@ -46,6 +46,7 @@ MonoBehaviour:
   Levels:
   - {fileID: 11400000, guid: 6493f8134c9c5c942a9c405706fc169f, type: 2}
   - {fileID: 11400000, guid: 0ad9c5773fb294f41bc66f4758824b6f, type: 2}
+  - {fileID: 11400000, guid: 0ad9c5773fb294f41bc66f4758824b6f, type: 2}
   DEBUG_LEVEL_TO_LOAD: 0
   _gameData:
     shipPrefab: {fileID: 6406665239312482538, guid: 5125af010af445f41b5965d7b4fdb8c2, type: 3}

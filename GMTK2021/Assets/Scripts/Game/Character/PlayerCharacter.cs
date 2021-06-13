@@ -45,6 +45,6 @@ public class PlayerCharacter : Character
         if (currentStation)
         {
             currentStation.setPlayerUsing(usingStation);
-        }
+         }
     }
 }
