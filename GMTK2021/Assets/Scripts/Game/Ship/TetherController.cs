@@ -48,7 +48,7 @@ public class TetherController : ShipController
 
         MoveTether();
 
-        if(playerUsing)
+        if(playerUsing && !Mathf.Approximately(tetherMove.x, 0f))
         {
             GameManager.playerController.OutsidePlayerCharacter.KickOffControls();
         }
