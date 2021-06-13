@@ -64,6 +64,7 @@ public class RepairController : ShipController
             timeTilDone -= Time.deltaTime;
             if(timeTilDone <= 0f)
             {
+                GameManager.playerController.OutsidePlayerCharacter.KickOffControls();
                 damagable.OnRepair();
                 trigger.enabled = false;
             }

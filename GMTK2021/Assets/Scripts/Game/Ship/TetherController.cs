@@ -47,6 +47,11 @@ public class TetherController : ShipController
         Tether.GetComponent<Tether>().TetherAnchor.transform.rotation = Quaternion.LookRotation(Vector3.forward, up);
 
         MoveTether();
+
+        if(playerUsing)
+        {
+            GameManager.playerController.OutsidePlayerCharacter.KickOffControls();
+        }
     }
 
     private void FixedUpdate()

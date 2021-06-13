@@ -30,6 +30,22 @@ public class ShipController : MonoBehaviour, GMTKControls.IGameplayActions
 
     }
 
+    public void SetEnabled(bool bNewEnabled)
+    {
+        GetComponent<Collider>().enabled = bNewEnabled;
+        if(!bNewEnabled)
+        {
+            if(GameManager.playerController.OutsidePlayerCharacter.usedStation == this)
+            {
+                GameManager.playerController.OutsidePlayerCharacter.KickOffControls();
+            }
+            else if(GameManager.playerController.InsidePlayerCharacter.usedStation == this)
+            {
+                GameManager.playerController.InsidePlayerCharacter.KickOffControls();
+            }
+        }
+    }
+
     public virtual void setPlayerUsing(bool newIsPlayerUsing)
     {
         playerUsing = newIsPlayerUsing;

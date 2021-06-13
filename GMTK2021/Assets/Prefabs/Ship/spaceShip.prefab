@@ -2113,6 +2113,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 5965602251239025222}
+    - target: {fileID: 2340542465591656396, guid: ee2736466506b144a954987c17a48543, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 6371513136976419110}
     - target: {fileID: 4173821841084363160, guid: ee2736466506b144a954987c17a48543, type: 3}
       propertyPath: animator
       value: 
@@ -2129,6 +2133,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 77294517127282358}
+    - target: {fileID: 4975741335833005683, guid: ee2736466506b144a954987c17a48543, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 8076310517125161542}
     - target: {fileID: 5057909091498169765, guid: ee2736466506b144a954987c17a48543, type: 3}
       propertyPath: m_RootOrder
       value: 10

@@ -19,6 +19,11 @@ public class Damagable : MonoBehaviour
             GameManager.ship.OnHit();
             animator.SetBool("Damage", true);
             Debug.Log("Ow");
+
+            if(controller)
+            {
+                controller.SetEnabled(false);
+            }
         }
     }
 
@@ -29,6 +34,11 @@ public class Damagable : MonoBehaviour
             bIsDamaged = false;
             GameManager.ship.Repair();
             animator.SetBool("Damage", false);
+
+            if (controller)
+            {
+                controller.SetEnabled(true);
+            }
         }
     }
 }
